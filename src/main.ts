@@ -13,7 +13,7 @@ import type {
   DoStuffEvent,
   ExtensionVerseDataTypes,
   ExtensionVerseSetData,
-} from 'paranext-extension-template-hello-world';
+} from 'scripture-forge';
 import extensionTemplateReact from './extension-template.web-view?inline';
 import extensionTemplateReact2 from './extension-template-2.web-view?inline';
 import extensionTemplateReactStyles from './extension-template.web-view.scss?inline';
@@ -290,7 +290,7 @@ const htmlWebViewProvider: IWebViewProvider = {
       );
     return {
       ...savedWebView,
-      title: 'Extension Template Hello World HTML',
+      title: 'Scripture Forge HTML',
       contentType: 'html' as WebViewContentType.HTML,
       content: extensionTemplateHtml,
     };
@@ -310,7 +310,7 @@ const reactWebViewProvider: IWebViewProvider = {
       );
     return {
       ...savedWebView,
-      title: 'Extension Template Hello World React',
+      title: 'Scripture Forge React',
       content: extensionTemplateReact,
       styles: extensionTemplateReactStyles,
     };
@@ -330,7 +330,7 @@ const reactWebViewProvider2: IWebViewProvider = {
       );
     return {
       ...savedWebView,
-      title: 'Extension Template Hello World React 2',
+      title: 'Scripture Forge React 2',
       content: extensionTemplateReact2,
       styles: extensionTemplateReactStyles,
     };
@@ -378,12 +378,12 @@ export async function activate(context: ExecutionActivationContext) {
 
   // Emitter to tell subscribers how many times we have done stuff
   const onDoStuffEmitter = papi.network.createNetworkEventEmitter<DoStuffEvent>(
-    'extensionTemplateHelloWorld.doStuff',
+    'scriptureForge.doStuff',
   );
 
   let doStuffCount = 0;
   const doStuffCommandPromise = papi.commands.registerCommand(
-    'extensionTemplateHelloWorld.doStuff',
+    'scriptureForge.doStuff',
     (message: string) => {
       doStuffCount += 1;
       // Inform subscribers of the update

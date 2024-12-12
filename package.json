@@ -1,9 +1,9 @@
 {
-  "name": "paranext-extension-template-hello-world",
+  "name": "scripture-forge",
   "private": true,
   "version": "0.0.1",
-  "main": "paranext-extension-template-hello-world.js",
-  "types": "paranext-extension-template-hello-world.d.ts",
+  "main": "scripture-forge.js",
+  "types": "scripture-forge.d.ts",
   "author": "Paranext",
   "license": "MIT",
   "scripts": {

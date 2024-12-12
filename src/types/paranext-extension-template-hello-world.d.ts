@@ -1,4 +1,4 @@
-declare module 'paranext-extension-template-hello-world' {
+declare module 'scripture-forge' {
   import { DataProviderDataType, IDataProvider } from '@papi/core';
 
   export type ExtensionVerseSetData = string | { text: string; isHeresy: boolean };
@@ -9,9 +9,9 @@ declare module 'paranext-extension-template-hello-world' {
     Chapter: DataProviderDataType<[book: string, chapter: number], string | undefined, never>;
   };
 
-  /** Network event that informs subscribers when the command `extensionTemplateHelloWorld.doStuff` is run */
+  /** Network event that informs subscribers when the command `scriptureForge.doStuff` is run */
   export type DoStuffEvent = {
-    /** How many times the extension template has run the command `extensionTemplateHelloWorld.doStuff` */
+    /** How many times the extension template has run the command `scriptureForge.doStuff` */
     count: number;
   };
 
@@ -19,10 +19,10 @@ declare module 'paranext-extension-template-hello-world' {
 }
 
 declare module 'papi-shared-types' {
-  import type { ExtensionVerseDataProvider } from 'paranext-extension-template-hello-world';
+  import type { ExtensionVerseDataProvider } from 'scripture-forge';
 
   export interface CommandHandlers {
-    'extensionTemplateHelloWorld.doStuff': (message: string) => {
+    'scriptureForge.doStuff': (message: string) => {
       response: string;
       occurrence: number;
     };

@@ -1,14 +1,14 @@
 import papi, { logger } from '@papi/frontend';
 import { useData, useDataProvider } from '@papi/frontend/react';
 import { useCallback, useState } from 'react';
-import type { DoStuffEvent } from 'paranext-extension-template-hello-world';
+import type { DoStuffEvent } from 'scripture-forge';
 import { Button, useEvent } from 'platform-bible-react';
 
 globalThis.webViewComponent = function ExtensionTemplate2() {
   const [clicks, setClicks] = useState(0);
 
   useEvent<DoStuffEvent>(
-    papi.network.getNetworkEvent('extensionTemplateHelloWorld.doStuff'),
+    papi.network.getNetworkEvent('scriptureForge.doStuff'),
     useCallback(({ count }) => setClicks(count), []),
   );
 
@@ -26,7 +26,7 @@ globalThis.webViewComponent = function ExtensionTemplate2() {
   return (
     <>
       <div className="title">
-        Extension Template Hello World <span className="framework">React 2</span>
+        Scripture Forge <span className="framework">React 2</span>
       </div>
       <div>{latestExtensionVerseText}</div>
       <div>{latestQuickVerseText}</div>
@@ -35,12 +35,12 @@ globalThis.webViewComponent = function ExtensionTemplate2() {
           onClick={async () => {
             const start = performance.now();
             const result = await papi.commands.sendCommand(
-              'extensionTemplateHelloWorld.doStuff',
-              'Extension Template Hello World React Component',
+              'scriptureForge.doStuff',
+              'Scripture Forge React Component',
             );
             setClicks(clicks + 1);
             logger.info(
-              `command:extensionTemplateHelloWorld.doStuff '${result.response}' took ${
+              `command:scriptureForge.doStuff '${result.response}' took ${
                 performance.now() - start
               } ms`,
             );
