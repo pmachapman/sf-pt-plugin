@@ -1,7 +1,7 @@
 {
-  "name": "scripture-forge",
+  "name": "Scripture Forge for Platform.Bible",
   "version": "0.0.1",
-  "description": "Extension template for Paranext. Powered by webpack",
+  "description": "Scripture Forge for Paranext. Powered by webpack",
   "author": "Paranext",
   "license": "MIT",
   "main": "scripture-forge.ts",
